@@ -15,11 +15,14 @@ function InsertMovimientoController($scope, movimientoService, $location, cuenta
 
         $scope.movimiento.fechaMovimiento = new Date(); //añado la fecha para que sea la de hoy
         $scope.movimiento.saldoAnterior = $scope.movimiento.cuentaBancaria.saldo;
+        
+        
 
         if ($scope.movimiento.tipoMovimiento === 'debe') {
-            $scope.movimiento.saldoPosterior = $scope.movimiento.cuentaBancaria.saldo - $scope.movimiento.importe;
+            $scope.movimiento.saldoPosterior = parseFloat($scope.movimiento.cuentaBancaria.saldo) - parseFloat($scope.movimiento.importe);
         } else {
-            $scope.movimiento.saldoPosterior = parseInt($scope.movimiento.cuentaBancaria.saldo) + parseInt($scope.movimiento.importe);
+            //se comia los decimales porque parseabamos a int
+            $scope.movimiento.saldoPosterior = parseFloat($scope.movimiento.cuentaBancaria.saldo) + parseFloat($scope.movimiento.importe);
         }
 
         movimientoService.insertMovimiento($scope.movimiento).then(function (result) {
