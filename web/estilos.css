@@ -4,7 +4,6 @@ body{
 
 .variante{
     margin-top: 100px;
-    margin-bottom: 120px;
 }
 
 #sinMargen{
@@ -114,6 +113,7 @@ li#logout{
 #ocultoAccesibilidad{
     display:none;
 }
+
 .form-control{
 
     margin-bottom: 5px;
