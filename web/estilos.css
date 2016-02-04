@@ -90,6 +90,11 @@ input.btn.btn-sm.btn-error{
     margin-right: 0px;
 }
 
+.form-control{
+    
+    margin-bottom: 5px;
+}
+
 #logged{
     color: wheat;
     padding-top: 15px;
