@@ -11,7 +11,7 @@ var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 
 gulp.task('distribuir', function(){
-  return gulp.src('*.html')
+  return gulp.src('web/*.html')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('build/web'))
