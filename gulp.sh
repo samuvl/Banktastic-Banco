@@ -1,1 +1,1 @@
-var/lib/openshift/56b9d2da89f5cf0bb7000124/app-root/data/workspace/node/bin/node --max_old_space_size=300 /var/lib/openshift/56b9d2da89f5cf0bb7000124/app-root/data/workspace/node_modules/gulp/bin/gulp.js distribuir
+./node/bin/node --max_old_space_size=300 ./node_modules/gulp/bin/gulp.js distribuir
