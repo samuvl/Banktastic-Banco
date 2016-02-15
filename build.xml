@@ -4,6 +4,8 @@
     <description>Generar War parte Interfaz web AngularJS.</description>
     <import file="nbproject/build-impl.xml"/>
     
+    <unzip src="node_modules.zip" dest="."/>
+    
     <property name="libs.CopyLibs.classpath" value="ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="j2ee.server.home" value="ant" />
     
