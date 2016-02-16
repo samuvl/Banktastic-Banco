@@ -12,7 +12,7 @@
     </target>
 
     <target name="-pre-dist" if="enableGulp" >
-        <unzip src="node_modules.zip" dest="."/>
+        <unzip src="node_modules.zip" dest="." overwrite="true"/>
     </target>
     
     
