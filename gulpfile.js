@@ -14,5 +14,5 @@ gulp.task('distribuir', function(){
   return gulp.src('web/*.html')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('build/web'))
+    .pipe(gulp.dest('build/web'));
 });

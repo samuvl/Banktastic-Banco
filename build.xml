@@ -4,7 +4,19 @@
     <description>Generar War parte Interfaz web AngularJS.</description>
     <import file="nbproject/build-impl.xml"/>
     
-    <target name="distGulp" depends="-enable-unzip, dist" > 
+    <target name="distGulp" depends="-enable-unzip, dist" >
+        
+        <echo> -------------------------------------------------------- </echo>
+        <echo>Ejecutando Gulp</echo>
+        <exec executable="./node/bin/node.exe" >
+            <arg value="--max_old_space_size=250"/>
+            <arg value="./node_modules/gulp/bin/gulp.js"/>
+            <arg value="distribuir"/>
+        </exec>
+        
+        <echo> -------------------------------------------------------- </echo>
+        <echo> Borrando JS y moviendo</echo>
+        <exec> cp -a ./build/web/* ./web/ </exec>
     </target>
     
     <target name="-enable-unzip" >
