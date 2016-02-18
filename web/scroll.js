@@ -56,3 +56,7 @@ function nextSlide() {
 $(window).on({
     'DOMMouseScroll mousewheel': elementScroll
 });
+
+$(window).off({
+    'DOMMouseScroll mousewheel': elementScroll
+});
