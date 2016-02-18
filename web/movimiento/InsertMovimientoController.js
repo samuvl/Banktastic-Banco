@@ -1,7 +1,9 @@
 InsertMovimientoController.$inject = ['$scope', 'movimientoService', '$location', 'cuentaBancariaService', 'sharedPropierties'];
 
 function InsertMovimientoController($scope, movimientoService, $location, cuentaBancariaService, sharedPropierties) {
-
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
 
     $scope.movimiento = {};//tipomovimiento, concepto, importe,
 
@@ -15,8 +17,8 @@ function InsertMovimientoController($scope, movimientoService, $location, cuenta
 
         $scope.movimiento.fechaMovimiento = new Date(); //añado la fecha para que sea la de hoy
         $scope.movimiento.saldoAnterior = $scope.movimiento.cuentaBancaria.saldo;
-        
-        
+
+
 
         if ($scope.movimiento.tipoMovimiento === 'debe') {
             $scope.movimiento.saldoPosterior = parseFloat($scope.movimiento.cuentaBancaria.saldo) - parseFloat($scope.movimiento.importe);

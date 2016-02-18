@@ -4,6 +4,9 @@ function InsertCuentaController($scope, cuentaBancariaService, usuarioService, s
     $scope.okBoton = "Insertar";
     $scope.cuentaBancaria = {};
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
 
     usuarioService.find().then(function (result) {
         $scope.usuarios = result.data;

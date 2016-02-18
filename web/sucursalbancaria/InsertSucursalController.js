@@ -4,6 +4,9 @@ function InsertSucursalController($scope, sucursalBancariaService, entidadBancar
     $scope.okBoton = "Insertar";
     $scope.sucursalBancaria = {};
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
 
     entidadBancariaService.find().then(function (result) {
         $scope.entidadesBancarias = result.data;

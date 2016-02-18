@@ -3,17 +3,19 @@ function InsertUserController($scope, usuarioService, $location) {
     $scope.tipo = "INSERT";
     $scope.okBoton = "Insertar";
     $scope.usuario = {};
-    
+
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
     //si el campo email no esta vacio
 
-        
     $scope.ok = function () {
 //    if($scope.formulario.email.$error.email){
 //        
 //        alert("el correo debe tener formato de email");
 //    }
-        
-        
+
+
         usuarioService.insert($scope.usuario).then(function (result) {
             alert("Usuario Insertado con Éxito con el nombre: " + $scope.usuario.nombre);
             $location.url("/findUser");
@@ -26,7 +28,7 @@ function InsertUserController($scope, usuarioService, $location) {
         });
 
     };
-    
+
     $scope.cancel = function () {
         $location.url('/findUser');
     };

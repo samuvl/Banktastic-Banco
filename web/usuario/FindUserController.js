@@ -3,6 +3,10 @@ FindUserController.$inject = ['$scope', '$routeParams', 'usuarioService'];
 function FindUserController($scope, $routeParams, usuarioService) {
     $scope.tipo = "FIND";
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
+
     usuarioService.find().then(function (result) {
         $scope.usuarios = result.data;
     }, function (result) {

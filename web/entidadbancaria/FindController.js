@@ -3,6 +3,9 @@ FindController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
 function FindController($scope, $routeParams, entidadBancariaService) {
     $scope.tipo = "FIND";
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
 
     entidadBancariaService.find().then(function (result) {
         $scope.entidadesBancarias = result.data;

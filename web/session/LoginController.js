@@ -3,6 +3,10 @@ function LoginController($rootScope, $scope, $location, sessionService) {
 
     $scope.usuario = {};
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
+
     $scope.ok = function () {
 
         var response = sessionService.login($scope.usuario).success(function (data, status, headers, config) {

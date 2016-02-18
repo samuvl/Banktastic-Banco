@@ -3,6 +3,10 @@ FindCuentaController.$inject = ['$scope', '$routeParams', 'cuentaBancariaService
 function FindCuentaController($scope, $routeParams, cuentaBancariaService, usuarioService) {
     $scope.tipo = "FIND";
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
+
     $scope.filtrarDni = function () {
         cuentaBancariaService.findCuentaBydni($scope.dni).then(function (result) {
             $scope.cuentasBancarias = result.data;

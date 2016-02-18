@@ -4,6 +4,10 @@ function InsertController($scope, entidadBancariaService, $location, $window) {
     $scope.okBoton = "Insertar";
     $scope.entidadBancaria = {};
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
+
     $scope.ok = function () {
         entidadBancariaService.insert($scope.entidadBancaria).then(function (result) {
             alert("Entidad Insertada con Éxito con el nombre: " + $scope.entidadBancaria.nombre);

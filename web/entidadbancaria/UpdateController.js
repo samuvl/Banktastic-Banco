@@ -7,6 +7,10 @@ function UpdateController($scope, $routeParams, entidadBancariaService, sucursal
     $scope.okBoton = "Actualizar";
     $scope.deleteBoton = "Borrar";
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
+
     sucursalBancariaService.findSucursalByEntidad($scope.entidadBancaria.idEntidadBancaria).then(function (result) {
         $scope.sucursalesBancarias = result.data;
     }, function (result) {

@@ -8,6 +8,10 @@ function UpdateUserController($scope, $routeParams, usuarioService, cuentaBancar
     $scope.okBoton = "Actualizar";
     $scope.deleteBoton = "Borrar";
 
+    $(window).off(
+            'DOMMouseScroll mousewheel'
+            );
+
     usuarioService.get($routeParams.idUsuario).then(function (result) {
         $scope.usuario = result.data;
     }, function (result) {
